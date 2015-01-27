@@ -11,6 +11,7 @@
     <asset src="www/map-close-button.png" target="img/map-close-button.png" />
 
     <!-- android -->
+    <!--
     <platform name="android">
         <js-module src="www/MapKit.js" name="mapkit">
             <clobbers target="plugin.mapKit" />
@@ -64,6 +65,8 @@ In order for this plugin to work you need to make sure to have
 In case everything miserably fails and you can't build your project, you might need to import it in ADT (Eclipse) or Android Studio (IntelliJ).
         </info>
     </platform>
+    -->
+
     <!-- ios -->
     <platform name="ios">
         <js-module src="www/MapKit.js" name="mapkit">
