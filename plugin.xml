@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    id="com.phonegap.plugins.mapkit"
     version="0.9.3">
+    id="nl.salonhub.cordova.maps"
 
-    <name>MapKit</name>
-    <author>Anis Kadri</author>
+    <name>CordovaMaps</name>
+    <author>Salonhub</author>
     <license>Apache</license>
 
     <asset src="www/map-close-button.png" target="img/map-close-button.png" />
@@ -39,7 +39,7 @@
 
         <config-file target="res/xml/config.xml" parent="/widget">
            <feature name="MapKit">
-              <param name="android-package" value="com.phonegap.plugins.mapkit.MapKit"/>
+              <param name="android-package" value="nl.salonhub.cordova.maps.MapKit"/>
             </feature>
         </config-file>
 

@@ -1,4 +1,4 @@
-package com.phonegap.plugins.mapkit;
+package nl.salonhub.cordova.maps;
 
 import org.apache.cordova.CordovaWebView;
 import org.apache.cordova.CallbackContext;

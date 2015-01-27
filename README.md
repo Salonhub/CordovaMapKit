@@ -1,5 +1,5 @@
-Not so maintained. Checkout https://github.com/wf9a5m75/phonegap-googlemaps-plugin
-==================================================================================
+Fork for use in Salonhub applications
+=====================================
 
 MapKit plugin for iOS and Android
 =================================
