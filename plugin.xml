@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    version="0.9.3">
     id="nl.salonhub.cordova.maps"
+    version="0.9.4">
 
     <name>CordovaMaps</name>
     <author>Salonhub</author>

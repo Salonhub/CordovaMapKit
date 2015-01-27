@@ -22,6 +22,8 @@
 
 - (void)createViewWithOptions:(NSDictionary *)options; //Designated Initializer
 
+- (void)updateViewWithOptions:(NSDictionary *)options; 
+
 - (void)showMap:(CDVInvokedUrlCommand *)command;
 
 - (void)hideMap:(CDVInvokedUrlCommand *)command;
