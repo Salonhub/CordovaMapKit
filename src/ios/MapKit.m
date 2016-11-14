@@ -14,12 +14,17 @@
 @synthesize mapView;
 @synthesize imageButton;
 
-
--(CDVPlugin*) initWithWebView:(UIWebView*)theWebView
+#ifdef __CORDOVA_4_0_0
+- (void)pluginInitialize
+{
+}
+#else
+- (CDVPlugin*) initWithWebView:(UIWebView*)theWebView
 {
     self = (MapKitView*)[super initWithWebView:theWebView];
     return self;
 }
+#endif
 
 /**
  * Create a native map view
@@ -310,8 +315,13 @@
 - (void) checkButtonTapped:(id)button 
 {
     UIButton *tmpButton = button;
-    NSString* jsString = [NSString stringWithFormat:@"%@(\"%i\");", self.buttonCallback, tmpButton.tag];
-    [self.webView stringByEvaluatingJavaScriptFromString:jsString];
+    NSString* jsString = [NSString stringWithFormat:@"%@(\"%i\");", self.buttonCallback, (int)tmpButton.tag];
+
+    if ([self.webView respondsToSelector:@selector(stringByEvaluatingJavaScriptFromString:)]) {
+        [self.webView performSelectorOnMainThread:@selector(stringByEvaluatingJavaScriptFromString:) withObject:jsString waitUntilDone:NO];
+    } else {
+        [self.webView performSelectorOnMainThread:@selector(evaluateJavaScript:completionHandler:) withObject:jsString waitUntilDone:NO];
+    }
 }
 
 - (void)dealloc
