@@ -12,6 +12,7 @@
 @synthesize buttonCallback;
 @synthesize childView;
 @synthesize mapView;
+@synthesize locationManager;
 @synthesize imageButton;
 
 #ifdef __CORDOVA_4_0_0
@@ -55,6 +56,12 @@
     y += offsetTop;
 
     self.childView = [[UIView alloc] initWithFrame:CGRectMake(x,y,width,height)];
+    
+    self.locationManager = [[CLLocationManager alloc ] init];
+    [[self locationManager] requestWhenInUseAuthorization];
+    [[self locationManager] startUpdatingLocation];
+    
+    
     self.mapView = [[MKMapView alloc] initWithFrame:CGRectMake(self.childView.bounds.origin.x, self.childView.bounds.origin.x, self.childView.bounds.size.width, self.childView.bounds.size.height)];
     self.mapView.delegate = self;
     self.mapView.multipleTouchEnabled   = YES;
@@ -102,6 +109,14 @@
 
         mapView = nil;
     }
+    
+    if (self.locationManager)
+    {
+        [ self.locationManager stopUpdatingLocation];
+        
+        locationManager = nil;
+    }
+    
     if(self.imageButton)
     {
         [ self.imageButton removeFromSuperview];
@@ -109,11 +124,13 @@
         self.imageButton = nil;
 
     }
+    
     if(self.childView)
     {
         [ self.childView removeFromSuperview];
         self.childView = nil;
     }
+    
     self.buttonCallback = nil;
 }
 

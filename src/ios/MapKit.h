@@ -16,6 +16,7 @@
 @property (nonatomic, copy) NSString *buttonCallback;
 @property (nonatomic, retain) UIView* childView;
 @property (nonatomic, retain) MKMapView* mapView;
+@property (nonatomic, retain) CLLocationManager* locationManager;
 @property (nonatomic, retain) UIButton*  imageButton;
 
 - (void)createView;
