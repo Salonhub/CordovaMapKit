@@ -73,7 +73,7 @@
     UIImageView* imageView = [[UIImageView alloc] initWithImage:appIcon];
     
 	//make sizing choices based on your needs, experiment with these. maybe not all the calls below are needed.
-    imageView.layer.cornerRadius = 5.0;
+    imageView.layer.cornerRadius = 8.0;
     imageView.layer.masksToBounds = YES;
 	imageView.contentMode = UIViewContentModeScaleAspectFit;
 	imageView.autoresizingMask = ( UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight );
