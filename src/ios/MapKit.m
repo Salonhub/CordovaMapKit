@@ -270,7 +270,7 @@
     else
         annView.pinTintColor = MKPinAnnotationView.redPinColor;
 
-    AsyncImageView* asyncImage = [[AsyncImageView alloc] initWithFrame:CGRectMake(0,0, 50, 32)];
+    AsyncImageView* asyncImage = [[AsyncImageView alloc] initWithFrame:CGRectMake(0,0, 32, 32)];
     asyncImage.tag = 999;
     if (phAnnotation.imageURL)
     {
