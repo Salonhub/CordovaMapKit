@@ -68,7 +68,10 @@
 	}
 	
 	//make an image view for the image
-	UIImageView* imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"AppIcon40x40.png"]];
+    UIImage *appIcon = [UIImage imageNamed:[[NSBundle mainBundle].infoDictionary[@"CFBundleIcons"][@"CFBundlePrimaryIcon"][@"CFBundleIconFiles"] firstObject]];
+    
+    UIImageView* imageView = [[UIImageView alloc] initWithImage:appIcon];
+    
 	//make sizing choices based on your needs, experiment with these. maybe not all the calls below are needed.
 	imageView.contentMode = UIViewContentModeScaleAspectFit;
 	imageView.autoresizingMask = ( UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight );
