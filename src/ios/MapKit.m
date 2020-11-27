@@ -253,7 +253,7 @@
   }
 
     CDVAnnotation *phAnnotation=(CDVAnnotation *) annotation;
-    NSString *identifier=[NSString stringWithFormat:@"INDEX[%i]", phAnnotation.index];
+    NSString *identifier=[NSString stringWithFormat:@"INDEX[%i]", (int)phAnnotation.index];
 
     MKPinAnnotationView *annView = (MKPinAnnotationView *)[theMapView dequeueReusableAnnotationViewWithIdentifier:identifier];
 
@@ -264,11 +264,11 @@
     annView.animatesDrop=YES;
     annView.canShowCallout = YES;
     if ([phAnnotation.pinColor isEqualToString:@"120"])
-        annView.pinColor = MKPinAnnotationColorGreen;
+        annView.pinTintColor = MKPinAnnotationView.greenPinColor;
     else if ([phAnnotation.pinColor isEqualToString:@"270"])
-        annView.pinColor = MKPinAnnotationColorPurple;
+        annView.pinTintColor = MKPinAnnotationView.purplePinColor;
     else
-        annView.pinColor = MKPinAnnotationColorRed;
+        annView.pinTintColor = MKPinAnnotationView.redPinColor;
 
     AsyncImageView* asyncImage = [[AsyncImageView alloc] initWithFrame:CGRectMake(0,0, 50, 32)];
     asyncImage.tag = 999;
